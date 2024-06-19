@@ -1,6 +1,6 @@
 {
   "name": "pokemon-battle-simulator",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "version": "0.1.0",
   "private": true,
   "homepage": "http://erwong25.github.io/pokemon-battle-simulator",
@@ -10,18 +10,18 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "babel src/ -d build/",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "flow": "flow",
-    "prepublish": "yarn run build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "prepublish": "yarn run build"
   },
   "eslintConfig": {
     "extends": [
