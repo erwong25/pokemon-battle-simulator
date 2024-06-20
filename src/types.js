@@ -1,3 +1,21 @@
 // @flow
 
-export type Type = "Normal" | "Poison" | "Ghost" | "Water" | "Fire" | "Grass";
+export type Type =
+  | "Normal"
+  | "Fighting"
+  | "Flying"
+  | "Poison"
+  | "Ground"
+  | "Rock"
+  | "Bug"
+  | "Ghost"
+  | "Steel"
+  | "Water"
+  | "Fire"
+  | "Grass"
+  | "Electric"
+  | "Psychic"
+  | "Ice"
+  | "Dragon"
+  | "Dark"
+  | "Fairy";

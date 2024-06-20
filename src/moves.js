@@ -12,11 +12,11 @@ export type Move = {
   damageCategory: DamageCategory,
 };
 
-export const POISON_STING: Move = {
-  name: "Poison Sting",
+export const POISON_JAB: Move = {
+  name: "Poison Jab",
   type: "Poison",
-  power: 15,
-  accuracy: 0.5,
+  power: 80,
+  accuracy: 100,
   damageCategory: "Physical",
 };
 
@@ -25,6 +25,14 @@ export const HORN_ATTACK: Move = {
   type: "Normal",
   power: 65,
   accuracy: 1,
+  damageCategory: "Physical",
+};
+
+export const DRILL_RUN: Move = {
+  name: "Drill Run",
+  type: "Ground",
+  power: 80,
+  accuracy: 0.95,
   damageCategory: "Physical",
 };
 
@@ -44,4 +52,19 @@ export const POLTERGEIST: Move = {
   damageCategory: "Special",
 };
 
-export const MOVES = { POISON_STING, HORN_ATTACK, SHADOW_BALL, POLTERGEIST };
+export const LICK: Move = {
+  name: "Lick",
+  type: "Ghost",
+  power: 30,
+  accuracy: 1,
+  damageCategory: "Physical",
+};
+
+export const MOVES = {
+  POISON_JAB,
+  HORN_ATTACK,
+  DRILL_RUN,
+  SHADOW_BALL,
+  POLTERGEIST,
+  LICK,
+};

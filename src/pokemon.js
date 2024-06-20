@@ -22,7 +22,7 @@ export type Pokemon = {
 };
 
 export const GENGAR: Pokemon = {
-  moves: [MOVES.SHADOW_BALL, MOVES.POLTERGEIST],
+  moves: [MOVES.SHADOW_BALL, MOVES.POLTERGEIST, MOVES.LICK],
   name: "Gengar",
   types: ["Poison", "Ghost"],
   stats: {
@@ -37,7 +37,7 @@ export const GENGAR: Pokemon = {
 };
 
 export const NIDORINO: Pokemon = {
-  moves: [MOVES.POISON_STING, MOVES.HORN_ATTACK],
+  moves: [MOVES.POISON_JAB, MOVES.HORN_ATTACK, MOVES.DRILL_RUN],
   name: "Nidorino",
   types: ["Poison"],
   stats: {

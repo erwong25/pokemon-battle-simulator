@@ -8,7 +8,8 @@ import computeDamage from "./damageCalculations";
 import { GENGAR, NIDORINO } from "./pokemon.js";
 
 function moveSelector() {
-  return Math.random() >= 0.5 ? 0 : 1;
+  console.log(GENGAR.moves.length);
+  return Math.floor(Math.random() * GENGAR.moves.length);
 }
 
 function App(): React$MixedElement {
