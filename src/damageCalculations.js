@@ -65,12 +65,12 @@ export default function computeDamage(
   // does it hit?
   const hitRoll = Math.random();
   if (hitRoll > move.accuracy) {
-    return -1;
+    return "Miss";
   }
 
   const typeEffectiveness = computeTypeEffectiveness(move.type, defender.types);
   if (typeEffectiveness == 0) {
-    return 0;
+    return "No effect";
   }
   // (power + atk - def) * typeEffectiveness
   var atkStat = 0;
@@ -86,5 +86,5 @@ export default function computeDamage(
   if (damage <= 0) {
     return 1;
   }
-  return damage;
+  return Math.round(damage);
 }

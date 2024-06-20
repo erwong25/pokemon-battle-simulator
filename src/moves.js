@@ -16,7 +16,7 @@ export const POISON_STING: Move = {
   name: "Poison Sting",
   type: "Poison",
   power: 15,
-  accuracy: 1,
+  accuracy: 0.5,
   damageCategory: "Physical",
 };
 
