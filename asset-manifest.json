@@ -1,15 +1,30 @@
 {
   "files": {
     "main.css": "/pokemon-battle-simulator/static/css/main.4a5ca9b7.css",
-    "main.js": "/pokemon-battle-simulator/static/js/main.c65eaa3f.js",
+    "main.js": "/pokemon-battle-simulator/static/js/main.f654beb0.js",
     "static/js/453.3dfcdea5.chunk.js": "/pokemon-battle-simulator/static/js/453.3dfcdea5.chunk.js",
+    "static/media/ani_bw_003.gif": "/pokemon-battle-simulator/static/media/ani_bw_003.75a284bb9b6d603232b9.gif",
+    "static/media/ani_bw_009.gif": "/pokemon-battle-simulator/static/media/ani_bw_009.65aaef101b63b5f7b6fc.gif",
+    "static/media/ani_bw_006.gif": "/pokemon-battle-simulator/static/media/ani_bw_006.7211532c36ea1d0f267d.gif",
+    "static/media/ani_bw_149.gif": "/pokemon-battle-simulator/static/media/ani_bw_149.1b1b036250951b0397dd.gif",
+    "static/media/ani_bw_150.gif": "/pokemon-battle-simulator/static/media/ani_bw_150.87fb25cffb88a6744ae1.gif",
+    "static/media/ani_bw_002.gif": "/pokemon-battle-simulator/static/media/ani_bw_002.c25b3a6f0e408a6e2520.gif",
+    "static/media/ani_bw_144.gif": "/pokemon-battle-simulator/static/media/ani_bw_144.0207aff8c78438035c5f.gif",
+    "static/media/ani_bw_008.gif": "/pokemon-battle-simulator/static/media/ani_bw_008.4b8614981fa5357dcd6c.gif",
+    "static/media/ani_bw_146.gif": "/pokemon-battle-simulator/static/media/ani_bw_146.c8b036849cdd575a4470.gif",
+    "static/media/ani_bw_033.gif": "/pokemon-battle-simulator/static/media/ani_bw_033.b4d7cc34898d3b7740ae.gif",
+    "static/media/ani_bw_005.gif": "/pokemon-battle-simulator/static/media/ani_bw_005.26f90579061912ffa24a.gif",
+    "static/media/ani_bw_094.gif": "/pokemon-battle-simulator/static/media/ani_bw_094.761ac11d133551a42a88.gif",
+    "static/media/ani_bw_004.gif": "/pokemon-battle-simulator/static/media/ani_bw_004.5258e37280594f80eea2.gif",
+    "static/media/ani_bw_001.gif": "/pokemon-battle-simulator/static/media/ani_bw_001.066f4b9aa8d456c1e05f.gif",
+    "static/media/ani_bw_007.gif": "/pokemon-battle-simulator/static/media/ani_bw_007.23bc3872a1f4fd4b80cf.gif",
     "index.html": "/pokemon-battle-simulator/index.html",
     "main.4a5ca9b7.css.map": "/pokemon-battle-simulator/static/css/main.4a5ca9b7.css.map",
-    "main.c65eaa3f.js.map": "/pokemon-battle-simulator/static/js/main.c65eaa3f.js.map",
+    "main.f654beb0.js.map": "/pokemon-battle-simulator/static/js/main.f654beb0.js.map",
     "453.3dfcdea5.chunk.js.map": "/pokemon-battle-simulator/static/js/453.3dfcdea5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4a5ca9b7.css",
-    "static/js/main.c65eaa3f.js"
+    "static/js/main.f654beb0.js"
   ]
 }
