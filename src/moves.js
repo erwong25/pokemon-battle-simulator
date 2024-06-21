@@ -44,11 +44,11 @@ export const SHADOW_BALL: Move = {
   damageCategory: "Special",
 };
 
-export const POLTERGEIST: Move = {
-  name: "Poltergeist",
-  type: "Ghost",
-  power: 110,
-  accuracy: 0.9,
+export const SLUDGE_BOMB: Move = {
+  name: "Sludge Bomb",
+  type: "Poison",
+  power: 90,
+  accuracy: 100,
   damageCategory: "Special",
 };
 
@@ -60,11 +60,82 @@ export const LICK: Move = {
   damageCategory: "Physical",
 };
 
+export const HYDRO_PUMP: Move = {
+  name: "Hydro Pump",
+  type: "Water",
+  power: 110,
+  accuracy: 0.8,
+  damageCategory: "Special",
+};
+
+export const BLIZZARD: Move = {
+  name: "Blizzard",
+  type: "Ice",
+  power: 110,
+  accuracy: 0.7,
+  damageCategory: "Special",
+};
+
+export const FIRE_BLAST: Move = {
+  name: "Fire Blast",
+  type: "Fire",
+  power: 110,
+  accuracy: 0.85,
+  damageCategory: "Special",
+};
+
+export const THUNDER: Move = {
+  name: "Thunder",
+  type: "Electric",
+  power: 110,
+  accuracy: 0.7,
+  damageCategory: "Special",
+};
+
+export const HURRICANE: Move = {
+  name: "Hurricane",
+  type: "Flying",
+  power: 110,
+  accuracy: 0.7,
+  damageCategory: "Special",
+};
+
+export const DRAGON_CLAW: Move = {
+  name: "Dragon Claw",
+  type: "Dragon",
+  power: 80,
+  accuracy: 1,
+  damageCategory: "Physical",
+};
+
+export const PSYCHIC: Move = {
+  name: "Psychic",
+  type: "Psychic",
+  power: 90,
+  accuracy: 1,
+  damageCategory: "Special",
+};
+
+export const PETAL_DANCE: Move = {
+  name: "Petal Dance",
+  type: "Grass",
+  power: 120,
+  accuracy: 1,
+  damageCategory: "Special",
+};
+
 export const MOVES = {
   POISON_JAB,
   HORN_ATTACK,
   DRILL_RUN,
   SHADOW_BALL,
-  POLTERGEIST,
-  LICK,
+  SLUDGE_BOMB,
+  HYDRO_PUMP,
+  BLIZZARD,
+  FIRE_BLAST,
+  THUNDER,
+  HURRICANE,
+  DRAGON_CLAW,
+  PSYCHIC,
+  PETAL_DANCE,
 };

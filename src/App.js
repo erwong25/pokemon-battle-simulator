@@ -3,6 +3,7 @@
 
 import "./App.css";
 import React from "react";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import computeDamage from "./damageCalculations";
 import { POKEMONS } from "./pokemon.js";
@@ -14,11 +15,18 @@ function moveSelector() {
 function App(): React$MixedElement {
   const [damageDealt, setDamageDealt] = useState(0);
   const [damageReceived, setDamageReceived] = useState(0);
-  const [nidorinoHP, setNidorinoHP] = useState(POKEMONS.NIDORINO.stats.maxHp);
+  const [activePlayerPokemon, setActivePlayerPokemon] = useState(
+    POKEMONS.NIDORINO
+  );
+  const [activePlayerHP, setActivePlayerHP] = useState(
+    POKEMONS.NIDORINO.stats.maxHp
+  );
+  const [activeOpponentPokemon, setActiveOpponentPokemon] = useState(
+    POKEMONS.GENGAR
+  );
   const [gengarHP, setGengarHP] = useState(POKEMONS.GENGAR.stats.maxHp);
   const [nidorinoMove, setNidorinoMove] = useState("");
   const [gengarMove, setGengarMove] = useState("");
-  const [activePokemon, setActivePokemon] = useState(POKEMONS.NIDORINO);
 
   function nidorinoText() {
     if (nidorinoMove !== "") {
@@ -55,15 +63,20 @@ function App(): React$MixedElement {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={activePokemon.staticSprite} />
-        <img src={activePokemon.animatedSprite} />
-        <img src={POKEMONS.GENGAR.staticSprite} />
-        <img src={POKEMONS.GENGAR.animatedSprite} />
-        <p>Nidorino: {nidorinoHP}</p>
+        <div style={{ display: "flex" }}>
+          <img
+            src={activePlayerPokemon.staticSprite}
+            style={{ transform: "scaleX(-1)" }}
+          />
+          <img src={activePlayerPokemon.animatedSprite} />
+          <img src={activeOpponentPokemon.staticSprite} />
+          <img src={activeOpponentPokemon.animatedSprite} />
+        </div>
+        <p>Nidorino: {activePlayerHP}</p>
         <p>Gengar: {gengarHP}</p>
         {nidorinoText()}
         {gengarText()}
-        {nidorinoHP <= 0 && <p>Nidorino fainted</p>}
+        {activePlayerHP <= 0 && <p>Nidorino fainted</p>}
         <p>
           {POKEMONS.NIDORINO.moves.map((item) => (
             <button
@@ -83,6 +96,9 @@ function App(): React$MixedElement {
                 } else {
                   setDamageDealt(attackDamage);
                   setGengarHP(gengarHP - attackDamage);
+                  if (gengarHP - attackDamage <= 0) {
+                    setActiveOpponentPokemon(POKEMONS.ARTICUNO);
+                  }
                 }
                 const opponentDamage = computeDamage(
                   opponentMove,
@@ -95,7 +111,7 @@ function App(): React$MixedElement {
                   setDamageDealt("No effect");
                 } else {
                   setDamageReceived(opponentDamage);
-                  setNidorinoHP(nidorinoHP - opponentDamage);
+                  setActivePlayerHP(activePlayerHP - opponentDamage);
                 }
               }}
             >
@@ -113,10 +129,10 @@ function App(): React$MixedElement {
           {
             <button
               onClick={() => {
-                setActivePokemon(POKEMONS.GENGAR);
+                setActivePlayerPokemon(POKEMONS.GENGAR);
               }}
             >
-              {activePokemon.name}
+              {activePlayerPokemon.name}
             </button>
           }
         </p>

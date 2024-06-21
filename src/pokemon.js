@@ -2,8 +2,7 @@
 
 import { animatedSpriteList, staticSpriteList } from "./spritesList";
 import type { Type } from "./types";
-import type { Move } from "./moves";
-import { MOVES } from "./moves";
+import { MOVES, type Move } from "./moves";
 
 type Stats = {
   atk: number,
@@ -26,7 +25,7 @@ export const BULBASAUR: Pokemon = {
   idNumber: 1,
   staticSprite: staticSpriteList.sprite1,
   animatedSprite: animatedSpriteList.sprite1,
-  moves: [],
+  moves: [MOVES.PETAL_DANCE, MOVES.SLUDGE_BOMB],
   name: "Bulbasaur",
   types: ["Grass", "Poison"],
   stats: {
@@ -44,7 +43,7 @@ export const IVYSAUR: Pokemon = {
   idNumber: 2,
   staticSprite: staticSpriteList.sprite2,
   animatedSprite: animatedSpriteList.sprite2,
-  moves: [],
+  moves: [MOVES.PETAL_DANCE, MOVES.SLUDGE_BOMB],
   name: "Ivysaur",
   types: ["Grass", "Poison"],
   stats: {
@@ -62,7 +61,7 @@ export const VENUSAUR: Pokemon = {
   idNumber: 3,
   staticSprite: staticSpriteList.sprite3,
   animatedSprite: animatedSpriteList.sprite3,
-  moves: [],
+  moves: [MOVES.PETAL_DANCE, MOVES.SLUDGE_BOMB],
   name: "Venusaur",
   types: ["Grass", "Poison"],
   stats: {
@@ -80,7 +79,7 @@ export const CHARMANDER: Pokemon = {
   idNumber: 4,
   staticSprite: staticSpriteList.sprite4,
   animatedSprite: animatedSpriteList.sprite4,
-  moves: [],
+  moves: [MOVES.FIRE_BLAST],
   name: "Charmander",
   types: ["Fire"],
   stats: {
@@ -98,7 +97,7 @@ export const CHARMELEON: Pokemon = {
   idNumber: 5,
   staticSprite: staticSpriteList.sprite5,
   animatedSprite: animatedSpriteList.sprite5,
-  moves: [],
+  moves: [MOVES.FIRE_BLAST],
   name: "Charmeleon",
   types: ["Fire"],
   stats: {
@@ -116,7 +115,7 @@ export const CHARIZARD: Pokemon = {
   idNumber: 6,
   staticSprite: staticSpriteList.sprite6,
   animatedSprite: animatedSpriteList.sprite6,
-  moves: [],
+  moves: [MOVES.FIRE_BLAST, MOVES.HURRICANE],
   name: "Charizard",
   types: ["Fire", "Flying"],
   stats: {
@@ -134,7 +133,7 @@ export const SQUIRTLE: Pokemon = {
   idNumber: 7,
   staticSprite: staticSpriteList.sprite7,
   animatedSprite: animatedSpriteList.sprite7,
-  moves: [],
+  moves: [MOVES.HYDRO_PUMP, MOVES.BLIZZARD],
   name: "Squirtle",
   types: ["Water"],
   stats: {
@@ -152,7 +151,7 @@ export const WARTORTLE: Pokemon = {
   idNumber: 8,
   staticSprite: staticSpriteList.sprite8,
   animatedSprite: animatedSpriteList.sprite8,
-  moves: [],
+  moves: [MOVES.HYDRO_PUMP, MOVES.BLIZZARD],
   name: "Wartortle",
   types: ["Water"],
   stats: {
@@ -170,7 +169,7 @@ export const BLASTOISE: Pokemon = {
   idNumber: 9,
   staticSprite: staticSpriteList.sprite9,
   animatedSprite: animatedSpriteList.sprite9,
-  moves: [],
+  moves: [MOVES.HYDRO_PUMP, MOVES.BLIZZARD],
   name: "Blastoise",
   types: ["Water"],
   stats: {
@@ -206,7 +205,7 @@ export const GENGAR: Pokemon = {
   idNumber: 94,
   staticSprite: staticSpriteList.sprite94,
   animatedSprite: animatedSpriteList.sprite94,
-  moves: [MOVES.SHADOW_BALL, MOVES.POLTERGEIST, MOVES.LICK],
+  moves: [MOVES.SHADOW_BALL, MOVES.SLUDGE_BOMB],
   name: "Gengar",
   types: ["Poison", "Ghost"],
   stats: {
@@ -224,7 +223,7 @@ export const ARTICUNO: Pokemon = {
   idNumber: 144,
   staticSprite: staticSpriteList.sprite144,
   animatedSprite: animatedSpriteList.sprite144,
-  moves: [],
+  moves: [MOVES.BLIZZARD, MOVES.HURRICANE],
   name: "Articuno",
   types: ["Ice", "Flying"],
   stats: {
@@ -242,7 +241,7 @@ export const ZAPDOS: Pokemon = {
   idNumber: 145,
   staticSprite: staticSpriteList.sprite145,
   animatedSprite: animatedSpriteList.sprite145,
-  moves: [],
+  moves: [MOVES.THUNDER, MOVES.HURRICANE],
   name: "Zapdos",
   types: ["Electric", "Flying"],
   stats: {
@@ -260,7 +259,7 @@ export const MOLTRES: Pokemon = {
   idNumber: 146,
   staticSprite: staticSpriteList.sprite146,
   animatedSprite: animatedSpriteList.sprite146,
-  moves: [],
+  moves: [MOVES.FIRE_BLAST, MOVES.HURRICANE],
   name: "Moltres",
   types: ["Fire", "Flying"],
   stats: {
@@ -278,7 +277,7 @@ export const DRAGONITE: Pokemon = {
   idNumber: 149,
   staticSprite: staticSpriteList.sprite149,
   animatedSprite: animatedSpriteList.sprite149,
-  moves: [],
+  moves: [MOVES.DRAGON_CLAW, MOVES.HURRICANE],
   name: "Dragonite",
   types: ["Dragon", "Flying"],
   stats: {
@@ -296,7 +295,7 @@ export const MEWTWO: Pokemon = {
   idNumber: 150,
   staticSprite: staticSpriteList.sprite150,
   animatedSprite: animatedSpriteList.sprite150,
-  moves: [],
+  moves: [MOVES.PSYCHIC, MOVES.SHADOW_BALL],
   name: "Dragonite",
   types: ["Dragon", "Flying"],
   stats: {
