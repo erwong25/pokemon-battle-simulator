@@ -8,6 +8,8 @@ import {
   typeEffectivenessMap,
 } from "./typeEffectiveness.js";
 
+export type CombatOutcome = "Miss" | "No effect" | number;
+
 function computeTypeEffectiveness(
   moveType: Type,
   defenderType: Array<Type>
@@ -32,13 +34,17 @@ export default function computeDamage(
   move: Move,
   attacker: Pokemon,
   defender: Pokemon
-): number {
+): CombatOutcome {
   // does it hit?
   const hitRoll = Math.random();
   if (hitRoll > move.accuracy) {
     return "Miss";
   }
 
+  var STAB = 1;
+  if (attacker.types.includes(move.type)) {
+    STAB = 1.5;
+  }
   const typeEffectiveness = computeTypeEffectiveness(move.type, defender.types);
   if (typeEffectiveness == 0) {
     return "No effect";
@@ -47,13 +53,17 @@ export default function computeDamage(
   var atkStat = 0;
   var defStat = 0;
   if (move.damageCategory === "Physical") {
-    atkStat = attacker.stats.atk;
-    defStat = defender.stats.def;
+    atkStat = attacker.stats.atk * 2 + 5;
+    defStat = defender.stats.def * 2 + 5;
   } else if (move.damageCategory === "Special") {
-    atkStat = attacker.stats.spAtk;
-    defStat = defender.stats.spDef;
+    atkStat = attacker.stats.spAtk * 2 + 5;
+    defStat = defender.stats.spDef * 2 + 5;
   }
-  const damage = (move.power + atkStat - defStat) * typeEffectiveness;
+  const level = 100;
+  const damage =
+    ((((2 * level) / 5 + 2) * move.power * atkStat) / defStat / 50 + 2) *
+    typeEffectiveness *
+    STAB;
   if (damage <= 0) {
     return 1;
   }

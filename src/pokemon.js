@@ -11,18 +11,20 @@ type Stats = {
   spDef: number,
   sp: number,
   maxHp: number,
-  currentHp: number, // this should actually be moved into a state variable somewhere, can you figure out how?
 };
 
 export type Pokemon = {
-  stats: Stats,
+  id: number,
+  staticSprite: string,
+  animatedSprite: string,
+  moves: Array<Move>,
   name: string,
   types: Array<Type>,
-  moves: Array<Move>,
+  stats: Stats,
 };
 
 export const BULBASAUR: Pokemon = {
-  idNumber: 1,
+  id: 1,
   staticSprite: staticSpriteList.sprite1,
   animatedSprite: animatedSpriteList.sprite1,
   moves: [MOVES.PETAL_DANCE, MOVES.SLUDGE_BOMB],
@@ -35,12 +37,11 @@ export const BULBASAUR: Pokemon = {
     spDef: 65,
     sp: 45,
     maxHp: 45,
-    currentHp: 45,
   },
 };
 
 export const IVYSAUR: Pokemon = {
-  idNumber: 2,
+  id: 2,
   staticSprite: staticSpriteList.sprite2,
   animatedSprite: animatedSpriteList.sprite2,
   moves: [MOVES.PETAL_DANCE, MOVES.SLUDGE_BOMB],
@@ -53,12 +54,11 @@ export const IVYSAUR: Pokemon = {
     spDef: 80,
     sp: 60,
     maxHp: 60,
-    currentHp: 60,
   },
 };
 
 export const VENUSAUR: Pokemon = {
-  idNumber: 3,
+  id: 3,
   staticSprite: staticSpriteList.sprite3,
   animatedSprite: animatedSpriteList.sprite3,
   moves: [MOVES.PETAL_DANCE, MOVES.SLUDGE_BOMB],
@@ -71,12 +71,11 @@ export const VENUSAUR: Pokemon = {
     spDef: 100,
     sp: 80,
     maxHp: 80,
-    currentHp: 80,
   },
 };
 
 export const CHARMANDER: Pokemon = {
-  idNumber: 4,
+  id: 4,
   staticSprite: staticSpriteList.sprite4,
   animatedSprite: animatedSpriteList.sprite4,
   moves: [MOVES.FIRE_BLAST],
@@ -89,12 +88,11 @@ export const CHARMANDER: Pokemon = {
     spDef: 50,
     sp: 65,
     maxHp: 39,
-    currentHp: 39,
   },
 };
 
 export const CHARMELEON: Pokemon = {
-  idNumber: 5,
+  id: 5,
   staticSprite: staticSpriteList.sprite5,
   animatedSprite: animatedSpriteList.sprite5,
   moves: [MOVES.FIRE_BLAST],
@@ -107,12 +105,11 @@ export const CHARMELEON: Pokemon = {
     spDef: 65,
     sp: 80,
     maxHp: 58,
-    currentHp: 58,
   },
 };
 
 export const CHARIZARD: Pokemon = {
-  idNumber: 6,
+  id: 6,
   staticSprite: staticSpriteList.sprite6,
   animatedSprite: animatedSpriteList.sprite6,
   moves: [MOVES.FIRE_BLAST, MOVES.HURRICANE],
@@ -125,12 +122,11 @@ export const CHARIZARD: Pokemon = {
     spDef: 85,
     sp: 100,
     maxHp: 78,
-    currentHp: 78,
   },
 };
 
 export const SQUIRTLE: Pokemon = {
-  idNumber: 7,
+  id: 7,
   staticSprite: staticSpriteList.sprite7,
   animatedSprite: animatedSpriteList.sprite7,
   moves: [MOVES.HYDRO_PUMP, MOVES.BLIZZARD],
@@ -143,12 +139,11 @@ export const SQUIRTLE: Pokemon = {
     spDef: 64,
     sp: 43,
     maxHp: 44,
-    currentHp: 44,
   },
 };
 
 export const WARTORTLE: Pokemon = {
-  idNumber: 8,
+  id: 8,
   staticSprite: staticSpriteList.sprite8,
   animatedSprite: animatedSpriteList.sprite8,
   moves: [MOVES.HYDRO_PUMP, MOVES.BLIZZARD],
@@ -161,12 +156,11 @@ export const WARTORTLE: Pokemon = {
     spDef: 80,
     sp: 58,
     maxHp: 59,
-    currentHp: 59,
   },
 };
 
 export const BLASTOISE: Pokemon = {
-  idNumber: 9,
+  id: 9,
   staticSprite: staticSpriteList.sprite9,
   animatedSprite: animatedSpriteList.sprite9,
   moves: [MOVES.HYDRO_PUMP, MOVES.BLIZZARD],
@@ -179,12 +173,11 @@ export const BLASTOISE: Pokemon = {
     spDef: 105,
     sp: 78,
     maxHp: 79,
-    currentHp: 79,
   },
 };
 
 export const NIDORINO: Pokemon = {
-  idNumber: 33,
+  id: 33,
   staticSprite: staticSpriteList.sprite33,
   animatedSprite: animatedSpriteList.sprite33,
   moves: [MOVES.POISON_JAB, MOVES.HORN_ATTACK, MOVES.DRILL_RUN],
@@ -197,12 +190,11 @@ export const NIDORINO: Pokemon = {
     spDef: 55,
     sp: 65,
     maxHp: 61,
-    currentHp: 61,
   },
 };
 
 export const GENGAR: Pokemon = {
-  idNumber: 94,
+  id: 94,
   staticSprite: staticSpriteList.sprite94,
   animatedSprite: animatedSpriteList.sprite94,
   moves: [MOVES.SHADOW_BALL, MOVES.SLUDGE_BOMB],
@@ -215,12 +207,11 @@ export const GENGAR: Pokemon = {
     spDef: 75,
     sp: 110,
     maxHp: 60,
-    currentHp: 60,
   },
 };
 
 export const ARTICUNO: Pokemon = {
-  idNumber: 144,
+  id: 144,
   staticSprite: staticSpriteList.sprite144,
   animatedSprite: animatedSpriteList.sprite144,
   moves: [MOVES.BLIZZARD, MOVES.HURRICANE],
@@ -233,12 +224,11 @@ export const ARTICUNO: Pokemon = {
     spDef: 125,
     sp: 85,
     maxHp: 90,
-    currentHp: 90,
   },
 };
 
 export const ZAPDOS: Pokemon = {
-  idNumber: 145,
+  id: 145,
   staticSprite: staticSpriteList.sprite145,
   animatedSprite: animatedSpriteList.sprite145,
   moves: [MOVES.THUNDER, MOVES.HURRICANE],
@@ -251,12 +241,11 @@ export const ZAPDOS: Pokemon = {
     spDef: 90,
     sp: 100,
     maxHp: 90,
-    currentHp: 90,
   },
 };
 
 export const MOLTRES: Pokemon = {
-  idNumber: 146,
+  id: 146,
   staticSprite: staticSpriteList.sprite146,
   animatedSprite: animatedSpriteList.sprite146,
   moves: [MOVES.FIRE_BLAST, MOVES.HURRICANE],
@@ -269,12 +258,11 @@ export const MOLTRES: Pokemon = {
     spDef: 85,
     sp: 90,
     maxHp: 90,
-    currentHp: 90,
   },
 };
 
 export const DRAGONITE: Pokemon = {
-  idNumber: 149,
+  id: 149,
   staticSprite: staticSpriteList.sprite149,
   animatedSprite: animatedSpriteList.sprite149,
   moves: [MOVES.DRAGON_CLAW, MOVES.HURRICANE],
@@ -287,12 +275,11 @@ export const DRAGONITE: Pokemon = {
     spDef: 100,
     sp: 80,
     maxHp: 91,
-    currentHp: 91,
   },
 };
 
 export const MEWTWO: Pokemon = {
-  idNumber: 150,
+  id: 150,
   staticSprite: staticSpriteList.sprite150,
   animatedSprite: animatedSpriteList.sprite150,
   moves: [MOVES.PSYCHIC, MOVES.SHADOW_BALL],
@@ -305,7 +292,6 @@ export const MEWTWO: Pokemon = {
     spDef: 90,
     sp: 130,
     maxHp: 106,
-    currentHp: 106,
   },
 };
 

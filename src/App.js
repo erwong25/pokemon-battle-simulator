@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 // @format
 
 import "./App.css";
@@ -7,48 +7,68 @@ import React from "react";
 import { useState } from "react";
 import computeDamage from "./damageCalculations";
 import { POKEMONS } from "./pokemon.js";
+import type { CombatOutcome } from "./damageCalculations";
 
-function moveSelector() {
+function moveSelector(): number {
   return Math.floor(Math.random() * POKEMONS.GENGAR.moves.length);
 }
 
 function App(): React$MixedElement {
-  const [damageDealt, setDamageDealt] = useState(0);
-  const [damageReceived, setDamageReceived] = useState(0);
+  const [damageDealt, setDamageDealt] = useState<CombatOutcome>(0);
+  const [damageReceived, setDamageReceived] = useState<CombatOutcome>(0);
   const [activePlayerPokemon, setActivePlayerPokemon] = useState(
     POKEMONS.NIDORINO
   );
   const [activePlayerHP, setActivePlayerHP] = useState(
-    POKEMONS.NIDORINO.stats.maxHp
+    POKEMONS.NIDORINO.stats.maxHp * 2 + 110
   );
   const [activeOpponentPokemon, setActiveOpponentPokemon] = useState(
     POKEMONS.GENGAR
   );
-  const [gengarHP, setGengarHP] = useState(POKEMONS.GENGAR.stats.maxHp);
-  const [nidorinoMove, setNidorinoMove] = useState("");
-  const [gengarMove, setGengarMove] = useState("");
+  const [gengarHP, setGengarHP] = useState(
+    POKEMONS.GENGAR.stats.maxHp * 2 + 110
+  );
+  const [nidorinoMove, setNidorinoMove] = useState<string>("");
+  const [gengarMove, setGengarMove] = useState<string>("");
 
-  function nidorinoText() {
+  function activePlayerText(): React.Node {
     if (nidorinoMove !== "") {
-      if (damageDealt == "Miss") {
+      if (damageDealt === "Miss") {
         return <p>Miss</p>;
-      } else if (damageDealt == "No effect") {
+      } else if (damageDealt === "No effect") {
         return <p>No effect</p>;
       } else {
         return (
           <p>
-            Nidorino used {nidorinoMove}! Gengar took {damageDealt} damage.
+            {activePlayerPokemon.name} used {nidorinoMove}!{" "}
+            {activeOpponentPokemon.name} took {damageDealt} damage.
           </p>
         );
       }
     }
   }
 
-  function gengarText() {
+  function activeOpponentText(): React.Node {
     if (gengarMove !== "") {
-      if (damageReceived == "Miss") {
+      if (damageReceived === "Miss") {
         return <p>Miss</p>;
-      } else if (damageReceived == "No effect") {
+      } else if (damageReceived === "No effect") {
+        return <p>No effect</p>;
+      } else {
+        return (
+          <p>
+            Gengar used {gengarMove}! Nidorino took {damageReceived} damage.
+          </p>
+        );
+      }
+    }
+  }
+
+  function combatText(): React.Node {
+    if (gengarMove !== "") {
+      if (damageReceived === "Miss") {
+        return <p>Miss</p>;
+      } else if (damageReceived === "No effect") {
         return <p>No effect</p>;
       } else {
         return (
@@ -74,8 +94,10 @@ function App(): React$MixedElement {
         </div>
         <p>Nidorino: {activePlayerHP}</p>
         <p>Gengar: {gengarHP}</p>
-        {nidorinoText()}
-        {gengarText()}
+        {activePlayerText()}
+        {activeOpponentText()}
+        {combatText(activePlayerPokemon, nidorinoMove)}
+        {combatText()}
         {activePlayerHP <= 0 && <p>Nidorino fainted</p>}
         <p>
           {POKEMONS.NIDORINO.moves.map((item) => (
@@ -89,9 +111,9 @@ function App(): React$MixedElement {
                   POKEMONS.NIDORINO,
                   POKEMONS.GENGAR
                 );
-                if (attackDamage == "Miss") {
+                if (attackDamage === "Miss") {
                   setDamageDealt("Miss");
-                } else if (attackDamage == "No effect") {
+                } else if (attackDamage === "No effect") {
                   setDamageDealt("No effect");
                 } else {
                   setDamageDealt(attackDamage);
@@ -105,9 +127,9 @@ function App(): React$MixedElement {
                   POKEMONS.GENGAR,
                   POKEMONS.NIDORINO
                 );
-                if (opponentDamage == "Miss") {
+                if (opponentDamage === "Miss") {
                   setDamageDealt("Miss");
-                } else if (opponentDamage == "No effect") {
+                } else if (opponentDamage === "No effect") {
                   setDamageDealt("No effect");
                 } else {
                   setDamageReceived(opponentDamage);
