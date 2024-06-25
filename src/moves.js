@@ -16,7 +16,7 @@ export const POISON_JAB: Move = {
   name: "Poison Jab",
   type: "Poison",
   power: 80,
-  accuracy: 100,
+  accuracy: 1,
   damageCategory: "Physical",
 };
 
@@ -48,16 +48,8 @@ export const SLUDGE_BOMB: Move = {
   name: "Sludge Bomb",
   type: "Poison",
   power: 90,
-  accuracy: 100,
-  damageCategory: "Special",
-};
-
-export const LICK: Move = {
-  name: "Lick",
-  type: "Ghost",
-  power: 30,
   accuracy: 1,
-  damageCategory: "Physical",
+  damageCategory: "Special",
 };
 
 export const HYDRO_PUMP: Move = {
