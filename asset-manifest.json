@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pokemon-battle-simulator/static/css/main.4a5ca9b7.css",
-    "main.js": "/pokemon-battle-simulator/static/js/main.567604d4.js",
+    "main.js": "/pokemon-battle-simulator/static/js/main.11ea35b9.js",
     "static/js/453.3dfcdea5.chunk.js": "/pokemon-battle-simulator/static/js/453.3dfcdea5.chunk.js",
     "static/media/ani_bw_003.gif": "/pokemon-battle-simulator/static/media/ani_bw_003.75a284bb9b6d603232b9.gif",
     "static/media/ani_bw_009.gif": "/pokemon-battle-simulator/static/media/ani_bw_009.65aaef101b63b5f7b6fc.gif",
@@ -20,11 +20,11 @@
     "static/media/ani_bw_007.gif": "/pokemon-battle-simulator/static/media/ani_bw_007.23bc3872a1f4fd4b80cf.gif",
     "index.html": "/pokemon-battle-simulator/index.html",
     "main.4a5ca9b7.css.map": "/pokemon-battle-simulator/static/css/main.4a5ca9b7.css.map",
-    "main.567604d4.js.map": "/pokemon-battle-simulator/static/js/main.567604d4.js.map",
+    "main.11ea35b9.js.map": "/pokemon-battle-simulator/static/js/main.11ea35b9.js.map",
     "453.3dfcdea5.chunk.js.map": "/pokemon-battle-simulator/static/js/453.3dfcdea5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4a5ca9b7.css",
-    "static/js/main.567604d4.js"
+    "static/js/main.11ea35b9.js"
   ]
 }
