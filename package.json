@@ -5,6 +5,7 @@
   "private": true,
   "homepage": "http://erwong25.github.io/pokemon-battle-simulator",
   "dependencies": {
+    "@stylexjs/stylex": "^0.7.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -46,6 +47,9 @@
     "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
     "@babel/preset-flow": "^7.24.7",
+    "@stylexjs/babel-plugin": "^0.7.5",
+    "@stylexjs/dev-runtime": "^0.7.5",
+    "@stylexjs/eslint-plugin": "^0.7.5",
     "babel-plugin-syntax-hermes-parser": "^0.22.0",
     "eslint": "^8.57.0",
     "eslint-plugin-ft-flow": "^3.0.9",

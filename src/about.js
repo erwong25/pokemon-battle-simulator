@@ -4,6 +4,7 @@
 import React from "react";
 import { useState } from "react";
 import computeDamage from "./damageCalculations";
+import generatePlayerRoster from "./generatePlayerRoster";
 import { POKEMONS } from "./pokemon.js";
 import type { CombatOutcome } from "./damageCalculations";
 import combatText from "./combatText";
@@ -13,10 +14,13 @@ import { useParams, Link } from "react-router-dom";
 
 function App(): React$MixedElement {
   const params = useParams();
-  const startingPlayerPokemon = params.id;
-  const startingOpponentPOkemon = Math.floor(
-    Math.random() * Object.keys(POKEMONS).length
-  );
+  const roster = params.id.split(",");
+  const startingPlayerPokemon = roster[0]; //only starting pokemon is accounted for, need to add other roster functionality
+  const startingOpponentPokemon = [
+    Object.keys(POKEMONS)[
+      Math.floor(Math.random() * Object.keys(POKEMONS).length)
+    ],
+  ];
   const [damageDealt, setDamageDealt] = useState<CombatOutcome>(0);
   const [damageReceived, setDamageReceived] = useState<CombatOutcome>(0);
   const [activePlayerPokemon, setActivePlayerPokemon] = useState(
@@ -26,33 +30,23 @@ function App(): React$MixedElement {
     calculateMaxHP(POKEMONS[startingPlayerPokemon])
   );
   const [activeOpponentPokemon, setActiveOpponentPokemon] = useState(
-    POKEMONS[Object.keys(POKEMONS)[startingOpponentPOkemon]]
+    POKEMONS[startingOpponentPokemon]
   );
   const [activeOpponentHP, setActiveOpponentHP] = useState(
-    calculateMaxHP(POKEMONS[Object.keys(POKEMONS)[startingOpponentPOkemon]])
+    calculateMaxHP(POKEMONS[startingOpponentPokemon])
   );
   const [activePlayerMove, setActivePlayerMove] = useState<string>("");
   const [activeOpponentMove, setActiveOpponentMove] = useState<string>("");
-  const [playerRosterHP, setPlayerRosterHP] = useState(
-    new Map([
-      //   [
-      //     POKEMONS[startingPlayerPokemon],
-      //     calculateMaxHP(POKEMONS[startingPlayerPokemon]),
-      //   ],
-      [POKEMONS.ARTICUNO, 500],
-    ])
+  const [playerRosterHP, setPlayerRosterHP] = useState<map>(
+    generatePlayerRoster(roster)
   );
   //   const [opponentRosterHP, setOpponentRosterHP] = useState(
   //     new Map([[
-  //       POKEMONS[Object.keys(POKEMONS)[startingOpponentPOkemon]],
-  //       POKEMONS[Object.keys(POKEMONS)[startingOpponentPOkemon]].stats.maxHp * 2 +
+  //       pokemon: POKEMONS[Object.keys(POKEMONS)[startingOpponentPokemon]],
+  //       currentHP: POKEMONS[Object.keys(POKEMONS)[startingOpponentPokemon]].stats.maxHp * 2 +
   //         110,
   //     ]])
   //   );
-  function tester() {
-    console.log(...playerRosterHP.keys());
-    console.log(POKEMONS.ARTICUNO);
-  }
 
   return (
     <div>
@@ -89,7 +83,6 @@ function App(): React$MixedElement {
         {activePlayerPokemon.moves.map((item) => (
           <button
             onClick={() => {
-              tester();
               const opponentMove =
                 activeOpponentPokemon.moves[
                   moveSelector(activeOpponentPokemon)
@@ -134,6 +127,7 @@ function App(): React$MixedElement {
           <button
             onClick={() => {
               setActivePlayerPokemon(POKEMONS.GENGAR);
+              console.log(playerRosterHP);
               if (!playerRosterHP.has(POKEMONS.GENGAR)) {
                 setPlayerRosterHP(
                   playerRosterHP.set(

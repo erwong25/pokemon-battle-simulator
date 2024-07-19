@@ -4,7 +4,7 @@
 import "./App.css";
 import React from "react";
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   // Link,
@@ -15,7 +15,7 @@ import About from "./about";
 
 function App(): React$MixedElement {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <header className="App-header">
           <Routes>
@@ -30,7 +30,7 @@ function App(): React$MixedElement {
           </li> */}
         </header>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
