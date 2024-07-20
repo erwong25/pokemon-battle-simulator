@@ -1,10 +1,25 @@
 // @flow
 
 import React from "react";
-// import styleXPlugin from "@stylexjs/babel-plugin";
+import inject from "@stylexjs/dev-runtime";
 import { useState } from "react";
 import { POKEMONS } from "./pokemon";
 import { useNavigate } from "react-router-dom";
+import * as stylex from "@stylexjs/stylex";
+
+inject({
+  classNamePrefix: "x",
+  dev: true,
+  test: false,
+});
+
+const styles = stylex.create({
+  root: {
+    width: "100%",
+    maxWidth: 800,
+    minHeight: 40,
+  },
+});
 
 function Home(): React.Node {
   const pokemonList = Object.keys(POKEMONS);
@@ -16,7 +31,7 @@ function Home(): React.Node {
     console.log(POKEMONS[item].staticSprite);
   });
   return (
-    <div>
+    <div style={styles.root}>
       {roster.map((item) => (
         <div id={item}>
           <img src={POKEMONS[item].staticSprite} />
